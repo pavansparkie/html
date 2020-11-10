@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <link rel="stylesheet" 
+          href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.input-icons i { 
+            position: absolute; 
+        } 
+         .input-icons { 
+            width: 100%; 
+            margin-bottom: 10px; 
+        } 
+          
+body{
+background-color:rgb(17,180,247);
+}
+.slidecolor{
+background-color:rgb(254,213,35);
+}
+.masterdiv{
+padding:15px 15px;
+display:flex;
+flex-direction:row;
+height:600px;
+width:800px;
+flex-wrap:shrink;
+}
+.divparent1{
+padding:15px 15px;
+display:flex;
+flex-direction:column;
+height:100%;
+font-family:Candara;
+width:500px;
+
+}
+.divmiddlemain{
+padding:15px 15px;
+height:100%;
+width:1px;
+background-color:rgb(17,180,247);
+}
+
+.divparent2{
+padding:15px 15px;
+display:flex;
+flex-direction:column;
+height:100%;
+width:230px;
+font-family:Candara;
+}
+.parent2head{
+display:flex;
+background-color:rgb(53,69,82);
+justify-content:center;
+align-items:center;
+font-size:15px;
+color:white;
+height:13%;
+width:100%;
+}
+.parent2head1{
+display:flex;
+background-color:rgb(53,69,82);
+justify-content:center;
+align-items:center;
+font-size:15px;
+color:white;
+height:30%;
+width:100%;
+}
+.divchild1{
+padding:15px 15px;
+display:flex;
+height:59%;
+width:100%;
+flex-direction:column;
+background-color:rgb(254,213,35);
+justify-content:space-around;
+align-items:stretch;
+
+font-family:Candara;
+}
+.divchildmiddle{
+height:3%;
+width:60%;
+background-color:rgb(17,180,247);
+}
+
+
+
+.divchild2{
+padding:15px 15px;
+height:39%;
+width:100%;
+display:flex;
+background-color:rgb(254,213,35);
+flex-direction:column;
+justify-content:space-between;
+
+align-items:center;
+}
+.divchild3{
+display:flex;
+height:85%;
+width:95%;
+flex-direction:column;
+background-color:rgb(254,213,35);
+justify-content:space-around;
+align-items:stretch;
+
+font-family:Candara;
+}
+.useful{
+display:flex;
+height:70%;
+width:100%;
+flex-direction:column;
+background-color:rgb(254,213,35);
+justify-content:flex-start;
+align-items:baseline;
+}
+.useful2{
+display:flex;
+height:29%;
+width:100%;
+flex-direction:column;
+background-color:rgb(254,213,35);
+justify-content:flex-start;
+align-items:baseline;
+}
+.divchildmiddle2{
+height:3%;
+width:35%;
+background-color:rgb(17,180,247);
+}
+
+
+
+.divchild4{
+display:flex;
+height:70%;
+width:100%;
+
+background-color:rgb(254,213,35);
+flex-direction:column;
+justify-content:space-around;
+align-items:stretch;
+}
+.text-left
+{
+width: 40%;
+Text-align: left;
+}
+.text-right
+{
+width: 40%;
+Text-align: left;
+
+}
+.textline{
+ 
+    background:transparent;
+border: none;
+margin-left:20px;
+    color:white;
+    border-bottom: 1px solid #000000;
+width:80%;
+}
+
+[type="text"]{
+margin:0 auto;
+    width:95%;
+		text-align: left;
+		float: right;
+}
+[type="email"]{
+margin:0 auto;
+    width:95%;
+		text-align: left;
+		float: right;
+}
+.textcolor{
+color:white;
+}
+label{
+margin:0 auto;
+    width:95%;
+}
+[type="password"]{
+margin:0 auto;
+    width:95%;
+}
+.text-container
+{
+display:flex;
+height:10%;
+width:96%;
+flex-direction:row;
+background-color:rgb(254,213,35);
+justify-content:space-between;
+justify-content:space-around;
+margin-left:10px;
+margin-right:10px;
+align-items:center;
+
+}
+.size{
+margin:0 auto;
+    width:95%;
+		text-align: left;
+		float: right;
+}
+.button1{
+margin:0 auto;
+    width:100px;
+    font-size:9px;
+    height:25px;
+		background-color:rgb(53,69,82); /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+ 
+}
+.password{
+background:transparent;
+border: none;
+margin-left:20px;
+    color:white;
+    border-bottom: 1px solid #000000;
+width:95%;
+}
+
+.button2{
+margin:0 auto;
+    width:100px;
+    font-size:9px;
+    height:25px;
+		background-color:rgb(53,69,82); /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  line-height: 12px;
+  margin-top: 1px;
+  margin-right: 2%;
+}
+</style>
+</head>
+<body>
+<script>
+function Signup(){
+	var name="pavan";
+	var pass="Mypass123@";
+	var a=document.getElementById("signupname").value;
+	var b=document.getElementById("signuppassword").value;
+	if(a===name&&b===pass){
+		window.alert("account created");
+	}
+}
+function Passlength(){
+	var nameregex="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$";
+	var pass=document.getElementById("signuppassword").value;
+	var name=document.getElementById("signupname").value;
+
+	if(pass.length<8){
+		window.alert("hey "+name+" password length should be atleast 8");
+	}
+	else{
+		window.alert("hey "+name+" welcome");
+	}
+	
+}
+
+</script>
+<form action="index2.html" id="form1">
+<div class="masterdiv">
+<div class="divparent1" >
+
+<div class="divchild1">
+<center><h2 style="margin-top:0px">SIGN UP</h2></center>
+<label>Username</label>
+<div class="input-icons">
+<i class="fa fa-user icon"></i>
+<input type="text" class="textline" id="signupname" name="signupname" placeholder="Your name" required >
+
+</div>
+
+<label>E-mail</label>
+<div class="input-icons">
+<i class="fa fa-envelope icon"></i>
+<input type="email" class="textline" id="signupemail" name="signupmail" placeholder="Your mail" required>
+</div>
+<label>Phone</label>
+<div class="input-icons">
+<i class="fa fa-phone icon"></i>
+<input type="text" class="textline" id="signupphone" name="signupphone" placeholder="Your phone number">
+</div>
+<label>Password</label>
+<div class="input-icons">
+<i class="fa fa-key icon"></i>
+<input type="password" class="password" id="signuppassword" name="password" placeholder="Your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+</div>
+<button  name="create" class="button1" id="signupbutton" name="signupbutton" onclick="Passlength()" >CREATE ACCOUNT</button>
+
+</div>
+
+<div class="divchildmiddle">
+</div>
+
+<div class="divchild2">
+<center>
+<h2 style="text-decoration:underline;margin-top:0px">
+CONTACT US</h2>
+</center>
+<div class="text-container"  >
+<input type="text" class="text-left" id="contactusname"  name="contactusname" placeholder="Name" required>
+<input type="email" class="text-right" id="contactusemail" name="contactusemail" placeholder="E-mail" required>
+</div>
+<input type="text" id="contactustheme" name="contactustheme" placeholder="Theme...">
+
+<textarea class="size" rows="3" cols="3" placeholder="You text here..."></textarea>
+<button class="button2" id="sendbutton" name="sendmessage">SEND MESSSAGE</button>
+</div>
+
+</div>
+<div class="divmiddlemain"></div>
+<div class="divparent2">
+<div class="useful">
+<div class="parent2head"><center><h2>CONTACT FORM</h2></center></div>
+<div class="divchild3">
+
+<label class="textcolor" >Name</label>
+<input type="text" id="contactname" name="contactname" placeholder="Your name..." required>
+<label class="textcolor" >E-mail</label>
+<input type="email" id="contactemail" name="contactemail" placeholder="Your mail..." required>
+ <label class="textcolor">Subject</label>
+ <input type="text" id="contactsubject" name="subject" placeholder="Theme..." required>
+ <label class="textcolor">Message</label>
+ <textarea id="" rows="5" cols="2" placeholder="Your text here..."></textarea>
+ <button class="button2" id="sendmessage">SEND MESSAGE</button>
+ </div>
+ </div>
+ 
+ 
+ 
+ 
+ <!-- style="padding:15x 15x;display:flex; flex-direction:row;justify-content:space-between;justify-content:space-around" -->
+<div class="divchildmiddle2"></div>
+<div class="useful2">
+<div class="parent2head1"><center><h2>CONTACT FORM</h2></center></div>
+<div class="divchild4">
+<label class="textcolor">E-mail</label>
+<input type="text" id="subcontactemail" name="subcontactmail" placeholder="Your mail..." required>
+<button class="button2" id="subscribe" >SUBSCRIBE</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+</body>
+</html>
